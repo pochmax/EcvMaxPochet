@@ -18,6 +18,7 @@ nav{
     z-index: 9999;
 }
 
+
 .partie{
     display: flex;
     flex-direction: column;
@@ -38,13 +39,12 @@ nav{
     align-items: center;
     text-align: center;
     scroll-behavior: smooth;
+    color: white;
 }
 
 .apropos img{
-    border: 0px;
     border-radius: 50px;
-    width: 20%;
-    margin: 10px;
+    width: 300px;
 }
 
 .apropos h2{
@@ -55,6 +55,7 @@ nav{
 .apropos p{
     margin: 10px;
     font-size: 20px;
+    width: 300px;
 }
 
 
