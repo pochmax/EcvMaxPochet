@@ -30,6 +30,10 @@ class ProjetController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $projet-> getPhoto();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $projet->setPhoto($fileName);
             $entityManager->persist($projet);
             $entityManager->flush();
 
@@ -57,6 +61,11 @@ class ProjetController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $projet-> getPhoto();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $projet->setPhoto($fileName);
+            $entityManager->persist($projet);
             $entityManager->flush();
 
             return $this->redirectToRoute('projet_index', [], Response::HTTP_SEE_OTHER);
@@ -68,7 +77,7 @@ class ProjetController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'projet_delete', methods: ['POST'])]
+    #[Route('/delete/{id}', name: 'projet_delete', methods: ['GET'])]
     public function delete(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$projet->getId(), $request->request->get('_token'))) {

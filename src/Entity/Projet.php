@@ -16,7 +16,7 @@ class Projet
     #[ORM\Column(type: 'string', length: 255)]
     private $titre;
 
-    #[ORM\Column(type: 'blob')]
+    #[ORM\Column(type: 'string', length: 255)]
     private $photo;
 
     #[ORM\Column(type: 'text')]
@@ -44,7 +44,7 @@ class Projet
         return $this->photo;
     }
 
-    public function setPhoto($photo): self
+    public function setPhoto($photo)
     {
         $this->photo = $photo;
 

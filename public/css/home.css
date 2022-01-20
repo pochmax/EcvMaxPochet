@@ -193,6 +193,17 @@ nav{
     width: 50%;
 }
 
+/* partie projet */
+
+.projets{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.projet{
+    background-color: white;
+    border-radius: 8px;
+}
 
 /* Footer */
 
