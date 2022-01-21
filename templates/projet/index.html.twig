@@ -34,14 +34,16 @@
         {% endfor %}
         </tbody>
     </table> #}
-
+    
     <div class="projets">
         {% for projet in projets %}
 
-            <div class="projet">
+            <div class="projet" data-aos="zoom-in">
                 <img src="{{asset('ressources/'~ projet.photo )}}" alt="">
                 <h2>{{ projet.titre }}</h2>
                 <p>{{ projet.description }}</p>
+                <a href="{{ path('projet_show', {'id': projet.id}) }}">show</a>
+                <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
             </div>
 
         {% endfor %}
