@@ -6,10 +6,11 @@ use App\Entity\Projet;
 use App\Form\ProjetType;
 use App\Repository\ProjetRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/projet')]
 class ProjetController extends AbstractController
@@ -23,6 +24,7 @@ class ProjetController extends AbstractController
     }
 
     #[Route('/new', name: 'projet_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $projet = new Projet();
@@ -55,6 +57,7 @@ class ProjetController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'projet_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ProjetType::class, $projet);
@@ -78,6 +81,7 @@ class ProjetController extends AbstractController
     }
 
     #[Route('/delete/{id}', name: 'projet_delete', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$projet->getId(), $request->request->get('_token'))) {

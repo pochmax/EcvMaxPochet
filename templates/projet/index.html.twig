@@ -3,37 +3,6 @@
 {% block title %}Projet index{% endblock %}
 
 {% block body %}
-    <h1>Projet index</h1>
-
-    {# <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Photo</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for projet in projets %}
-            <tr>
-                <td>{{ projet.id }}</td>
-                <td>{{ projet.titre }}</td>
-                <td><img src="{{asset('ressources/'~ projet.photo )}}" alt=""></td>
-                <td>{{ projet.description }}</td>
-                <td>
-                    <a href="{{ path('projet_show', {'id': projet.id}) }}">show</a>
-                    <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table> #}
     
     <div class="projets">
         {% for projet in projets %}
@@ -42,12 +11,16 @@
                 <img src="{{asset('ressources/'~ projet.photo )}}" alt="">
                 <h2>{{ projet.titre }}</h2>
                 <p>{{ projet.description }}</p>
-                <a href="{{ path('projet_show', {'id': projet.id}) }}">show</a>
-                <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
+                <a href="{{ path('projet_show', {'id': projet.id}) }}">Détail</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
+                {% endif %}
+                
             </div>
 
         {% endfor %}
     </div>
-
-    <a href="{{ path('projet_new') }}">Create new</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('projet_new') }}">Create new</a>
+    {% endif %}
 {% endblock %}
