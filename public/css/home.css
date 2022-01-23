@@ -118,6 +118,8 @@ nav{
     border-radius: 8px;
 }
 
+
+
 /* Partie compétences */
 .competences{
     background: linear-gradient(to top, transparent, #595554),linear-gradient(to bottom, transparent, #595554), url(../ressources/photoCompetences.jpg);
@@ -158,6 +160,28 @@ nav{
     font-weight: bold;
     text-decoration: underline;
 }
+
+/* partie expériences professionnelles */
+
+.expPros{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    color: white;
+    padding: 30px;
+    margin: 30px;
+    background-color: #477875;
+    border: 0px;
+    border-radius: 50px;
+}
+
+.expPro{
+    border: 1px white solid;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
 
 /* Partie Loisirs */
 
