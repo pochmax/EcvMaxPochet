@@ -9,7 +9,7 @@
 		<h2>
 			<strong>A propos de moi</strong>
 		</h2>
-		<img src="{{asset('ressources/PhotoProfil.jpg')}}" alt="">
+		<img src="{{asset('ressources/PhotoProfil.jpg')}}" alt="Image libre de droit">
 		<h2>
 			<strong>Etudiant en licence professionelle développement internet et mobile.</strong>
 		</h2>
@@ -56,7 +56,7 @@
 			<strong>Compétences informatiques</strong>
 		</h2>
 		<div class="competences">
-			<div class="competence" data-aos="zoom-out-right">
+			{# <div class="competence" data-aos="zoom-out-right">
 				<i style="color:#be4bdb" class="fab fa-html5"></i>
 				<p>HTML</p>
 			</div>
@@ -91,7 +91,24 @@
 			<div class="competence" data-aos="zoom-in-left">
 				<i style="color:#be4bdb" class="fab fa-python"></i>
 				<p>Python</p>
-			</div>
+			</div> #}
+			{% for competence in competences %}
+
+				<div class="competence" data-aos="zoom-in">
+					{# {{ competence.id }} #}
+					{% if competence.fontawesome is null %}
+						<img src="{{asset('ressources/'~ competence.img )}}" alt="">
+					{% elseif competence.img is null %}
+						<i style="color:{{ competence.color }}" class="{{ competence.fontawesome }}"></i>
+					{% endif %}
+					<p>{{ competence.langage }}</p>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a href="{{ path('competences_show', {'id': competence.id}) }}">show</a>
+						<a href="{{ path('competences_edit', {'id': competence.id}) }}">edit</a>
+					{% endif %}
+					
+				</div>
+            {% endfor %}
 		</div>
 	</div>
 
@@ -131,12 +148,12 @@
 			<h2>Mes Loisirs</h2>
 			<div class="loisirsMax">
 				<div class="loisir" data-aos="fade-right">
-					<img src="{{asset('./ressources/PhotoPAV.jpg')}}" alt="">
+					<img src="{{asset('./ressources/PhotoPAV.jpg')}}" alt="Image libre de droit">
 					<h2>Planche à voile</h2>
 					<p>Je pratique la planche à voile depuis l'âge de 11 ans, grâce à ce sport, j'ai pu voyager dans tout l'Europe notamment par le biai de diverses championnats. J'ai participé aux championnats du monde, d'Europe et de France. J'ai aussi fait parti de la section planche à voile de mon lycée avec laquelle nous avons fini 2 ème au championnat de France UNSS 2018.</p>
 				</div>
 				<div class="loisir" data-aos="fade-left">
-					<img src="{{asset('./ressources/PhotoTrombone.jpg')}}" alt="">
+					<img src="{{asset('./ressources/PhotoTrombone.jpg')}}" alt="Image libre de droit">
 					<h2>Trombone à coulisse</h2>
 					<p>Je joue du trombone à coulisse depuis que j'ai 6 ans, cet instrument m'a beaucoup appris sur la rigueur et sur les différents styles musicaux. J'ai fait parti de différents orchestre et bandes, mais j'ai aussi participé à l'option musique de mon lycée de la première à la terminale.</p>
 				</div>

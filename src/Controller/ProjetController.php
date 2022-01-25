@@ -80,14 +80,14 @@ class ProjetController extends AbstractController
         ]);
     }
 
-    #[Route('/delete/{id}', name: 'projet_delete', methods: ['GET'])]
+    #[Route('/delete/{id}', name: 'projet_delete', methods: ['POST'])]
     #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$projet->getId(), $request->request->get('_token'))) {
-            $entityManager->remove($projet);
-            $entityManager->flush();
-        }
+        
+        $entityManager->remove($projet);
+        $entityManager->flush();
+        
 
         return $this->redirectToRoute('projet_index', [], Response::HTTP_SEE_OTHER);
     }
