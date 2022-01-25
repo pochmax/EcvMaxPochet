@@ -4,12 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Competences;
 use App\Form\CompetencesType;
-use App\Repository\CompetencesRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CompetencesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/competences')]
 class CompetencesController extends AbstractController
@@ -23,6 +24,7 @@ class CompetencesController extends AbstractController
     }
 
     #[Route('/new', name: 'competences_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $competence = new Competences();
@@ -51,6 +53,7 @@ class CompetencesController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'competences_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function edit(Request $request, Competences $competence, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(CompetencesType::class, $competence);
@@ -69,6 +72,7 @@ class CompetencesController extends AbstractController
     }
 
     #[Route('/{id}', name: 'competences_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function delete(Request $request, Competences $competence, EntityManagerInterface $entityManager): Response
     {
         
