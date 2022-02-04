@@ -298,10 +298,15 @@ footer{
     }
 }
 
-@media screen and (max-width: 1420px)
+@media screen and (max-width: 1440px)
 {
     .loisir{
         margin-top: 50px;
+        width: 650px;
+    }
+
+    .projet{
+        width: 650px;
     }
 }
 
@@ -310,9 +315,13 @@ footer{
     .loisir{
         margin-top: 50px;
     }
+
+    .projet{
+        width: 550px;
+    }
 }
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1024px)
 {
     .partie .loisirsMax{
         display: flex;
@@ -441,6 +450,10 @@ footer{
 
     .projet{
         width: 300px;
+    }
+
+    .projet p{
+        width: 200px;
     }
 }
 
