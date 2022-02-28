@@ -1,7 +1,7 @@
 /* Page "A propos" */
 
-body{
-    background-color:#e2e8f0;
+body {
+    background-color: #e2e8f0;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -9,18 +9,17 @@ body{
     animation: animatedBackground 80s linear infinite;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-nav{
+nav {
     position: sticky;
     top: 0px;
     z-index: 9999;
 }
 
-
-.partie{
+.partie {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,13 +27,13 @@ nav{
     width: 100%;
 }
 
-.partie h2{
+.partie h2 {
     border: 0px;
     font-weight: bold;
     font-size: 30px;
 }
 
-.apropos{
+.apropos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,26 +42,25 @@ nav{
     color: white;
 }
 
-.apropos img{
+.apropos img {
     border-radius: 50px;
     width: 300px;
 }
 
-.apropos h2{
+.apropos h2 {
     margin: 10px;
     font-size: 30px;
 }
 
-.apropos p{
+.apropos p {
     margin: 10px;
     font-size: 20px;
     width: 300px;
 }
 
-
 /* Page education */
 
-.education{
+.education {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,59 +74,59 @@ nav{
     scroll-behavior: smooth;
 }
 
-.education img{
+.education img {
     border: 0px;
     border-radius: 50px;
     width: 20%;
     margin: 10px;
 }
 
-.education h2{
+.education h2 {
     margin: 10px;
     font-size: 30px;
 }
 
-.education h3{
+.education h3 {
     margin: 10px;
     font-size: 25px;
 }
 
-.education p{
+.education p {
     margin: 10px;
     font-size: 20px;
 }
 
-.formations{
+.formations {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
-.formation{
+.formation {
     border: 1px white solid;
     margin: 20px;
     padding: 5px;
     border-radius: 8px;
 }
 
-.diplomes{
+.diplomes {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
-.diplome{
+.diplome {
     border: 1px white solid;
     margin: 20px;
     padding: 5px;
     border-radius: 8px;
 }
-
-
 
 /* Partie compétences */
-.competences{
-    background: linear-gradient(to top, transparent, #595554),linear-gradient(to bottom, transparent, #595554), url(../ressources/photoCompetences.jpg);
+.competences {
+    background: linear-gradient(to top, transparent, #595554),
+        linear-gradient(to bottom, transparent, #595554),
+        url(../ressources/photoCompetences.jpg);
     background-attachment: fixed;
     opacity: 90%;
     background-size: 100%;
@@ -142,18 +140,16 @@ nav{
     scroll-behavior: smooth;
 }
 
-
-.competence{
-    background: linear-gradient(to top,  transparent, rgb(216, 205, 203));
+.competence {
+    background: linear-gradient(to top, transparent, rgb(216, 205, 203));
     border-radius: 8px;
     border: 0px;
     width: 100%;
     z-index: 2;
     opacity: 100%;
-    
 }
 
-.competence i{
+.competence i {
     font-size: 10em;
     z-index: 40;
     opacity: 140%;
@@ -170,7 +166,7 @@ nav{
 
 /* partie expériences professionnelles */
 
-.expPros{
+.expPros {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -182,25 +178,24 @@ nav{
     border-radius: 50px;
 }
 
-.expPro{
+.expPro {
     border: 1px white solid;
     margin: 20px;
     padding: 5px;
     border-radius: 8px;
 }
 
-.expPro h3{
+.expPro h3 {
     font-size: 25px;
 }
 
-.expPro p{
+.expPro p {
     margin-top: 15px;
 }
 
 /* Partie Loisirs */
 
-
-.partie .loisirsMax{
+.partie .loisirsMax {
     margin-top: 100px;
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +204,7 @@ nav{
     margin-bottom: 50px;
 }
 
-.loisir{
+.loisir {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -222,19 +217,19 @@ nav{
     width: 700px;
 }
 
-.loisir img{
+.loisir img {
     margin-top: -20px;
     width: 80%;
     border-radius: 8px;
 }
 
-.loisir p{
+.loisir p {
     width: 50%;
 }
 
 /* partie projet */
 
-.projets{
+.projets {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -244,7 +239,7 @@ nav{
     text-align: center;
 }
 
-.projet{
+.projet {
     background-color: #477875;
     border-radius: 8px;
     display: flex;
@@ -257,7 +252,7 @@ nav{
     margin-bottom: 60px;
 }
 
-.projet h2{
+.projet h2 {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -267,22 +262,21 @@ nav{
     margin: 10px;
 }
 
-.projet p{
+.projet p {
     width: 500px;
     text-align: center;
     font-size: 15px;
 }
 
-.projet img{
+.projet img {
     width: 700px;
     border-radius: 8px;
     margin-top: -80px;
 }
 
-
 /* Footer */
 
-footer{
+footer {
     text-align: center;
     width: 100%;
     height: 25px;
@@ -291,124 +285,115 @@ footer{
 
 @keyframes animatedBackground {
     from {
-      background-position: 0 0;
+        background-position: 0 0;
     }
     to {
-      background-position: 200% 0;
+        background-position: 200% 0;
     }
 }
 
-@media screen and (max-width: 1440px)
-{
-    .loisir{
+@media screen and (min-width: 1440px) {
+    .loisir {
         margin-top: 50px;
         width: 650px;
     }
 
-    .projet{
+    .projet {
         width: 650px;
     }
 }
 
-@media screen and (max-width: 1200px)
-{
-    .loisir{
+@media screen and (max-width: 1200px) {
+    .loisir {
         margin-top: 50px;
     }
 
-    .projet{
+    .projet {
         width: 550px;
     }
 }
 
-@media screen and (max-width: 1024px)
-{
-    .partie .loisirsMax{
+@media screen and (max-width: 1024px) {
+    .partie .loisirsMax {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .loisir{
+    .loisir {
         margin-top: 50px;
         width: 500px;
     }
 
-    .projet{
+    .projet {
         margin-top: 50px;
         width: 500px;
     }
 }
 
-@media screen and (max-width: 850px)
-{
-    .competences{
+@media screen and (max-width: 850px) {
+    .competences {
         background-position: center;
     }
-    .expPros{
+    .expPros {
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
     }
 }
 
-
-
-@media screen and (max-width: 700px)
-{
-    .diplomes{
+@media screen and (max-width: 700px) {
+    .diplomes {
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .formations{
+    .formations {
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
     }
     /* Partie compétences */
-    .competences{
+    .competences {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .expPros{
+    .expPros {
         display: grid;
         grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .partie .loisirsMax{
+    .partie .loisirsMax {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .loisir{
+    .loisir {
         margin-top: 50px;
         width: 400px;
     }
 
-    .projet{
+    .projet {
         width: 400px;
     }
 
-    .projets{
+    .projets {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
     }
-
 }
 
-@media screen and (max-width: 630px)
-{
-    body{
+@media screen and (max-width: 630px) {
+    body {
         animation: animatedBackground 80s linear infinite;
     }
-    .competences{
+    .competences {
         display: grid;
         grid-template-columns: 1fr;
         text-align: center;
@@ -419,21 +404,20 @@ footer{
         background: none;
     }
 
-    .loisir{
+    .loisir {
         width: 350px;
     }
 
-    .projet{
+    .projet {
         width: 350px;
     }
 }
 
-@media screen and (max-width: 480px)
-{
-    body{
+@media screen and (max-width: 480px) {
+    body {
         animation: animatedBackground 20s linear infinite;
     }
-    .competences{
+    .competences {
         display: grid;
         grid-template-columns: 1fr;
         text-align: center;
@@ -444,16 +428,15 @@ footer{
         background: none;
     }
 
-    .loisir{
+    .loisir {
         width: 300px;
     }
 
-    .projet{
+    .projet {
         width: 300px;
     }
 
-    .projet p{
+    .projet p {
         width: 200px;
     }
 }
-
