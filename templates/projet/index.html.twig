@@ -11,8 +11,8 @@
                 <img src="{{asset('ressources/'~ projet.photo )}}" alt="Image libre de droit">
                 <h2>{{ projet.titre }}</h2>
                 <p>{{ projet.description }}</p>
-                <a href="{{ path('projet_show', {'id': projet.id}) }}">Détail</a>
                 {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('projet_show', {'id': projet.id}) }}">Détail</a>
                     <a href="{{ path('projet_edit', {'id': projet.id}) }}">edit</a>
                 {% endif %}
                 

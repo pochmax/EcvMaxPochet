@@ -49,6 +49,7 @@ class ProjetController extends AbstractController
     }
 
     #[Route('/{id}', name: 'projet_show', methods: ['GET'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function show(Projet $projet): Response
     {
         return $this->render('projet/show.html.twig', [

@@ -52,6 +52,12 @@ nav {
     font-size: 30px;
 }
 
+.apropos .social i {
+    margin-top: 20px;
+    width: 130px;
+    font-size: 50px;
+}
+
 .apropos p {
     margin: 10px;
     font-size: 20px;
